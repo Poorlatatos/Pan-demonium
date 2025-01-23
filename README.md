@@ -9,3 +9,8 @@ Changelog - 17:39 p.m. - 17/01/2025
 - Added in recipes.html file
 - Added in contact.html file
 - Added in a few small index.html headlines and functions
+
+Changelog-2 - 12:06 a.m. - 24/01/2025
+- Added in PAN-DEMONIUM game files
+- Added in recipe for recipe.html
+- Added in style.css
