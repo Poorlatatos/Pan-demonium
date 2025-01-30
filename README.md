@@ -20,3 +20,9 @@ Changelog - 12:26 p.m. - 27/01/2025
     - Beef Burger and Fries
     - Pizza Margherita
     - Roasted French Chicken
+
+Changelog - 16:55 p.m. - 30/01/2025
+- Changed webpages links for all website links
+- Added in .js file
+- Reworked the entire header for all pages
+- Added in mobile view adjustment for header
