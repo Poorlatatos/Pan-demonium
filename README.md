@@ -26,3 +26,8 @@ Changelog - 16:55 p.m. - 30/01/2025
 - Added in .js file
 - Reworked the entire header for all pages
 - Added in mobile view adjustment for header
+
+Changelog - 00:10 p.m. - 02/02/2025
+- Added in discussions_api.js
+- Added in login features
+- Created profile and username creation
