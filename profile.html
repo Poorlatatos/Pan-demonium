@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pan-Demonium | Contact</title>
+    <title>PACHINKO | User Profile</title>
     <link rel="stylesheet" href="Webpages/css/style.css">
 </head>
 <link rel="icon" type = "image/png" href="Images/company_logo.png">
@@ -27,23 +27,16 @@
             </nav>
         </div>
     </header>
-    
 
-    <div id="auth-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-title">Login</h2>
-            <form id="auth-form">
-                <input type="text" id="username" placeholder="Username (only for signup)" style="display:none;">
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <button type="submit">Submit</button>
-            </form>
-            <p id="toggle-auth">Don't have an account? <span>Sign Up</span></p>
-            <p id="auth-message"></p>
+
+    <div id="profile-section">
+        <h1>User Profile</h1>
+        <div id="profile">
+            <h2 style="display: inline;">Username : </h2><h2 id="userName" style="display: inline;">Loading...</h2>
+            <br>
+            <h2 style="display: inline;">Email : </h2><p id="userEmail" style="display: inline;">Loading...</p>
         </div>
     </div>
 
-    <script src="Webpages/js/login.js"></script>
-</body>
-</html>
+    <script src="Webpages/js/profile.js"></script>
+<body>

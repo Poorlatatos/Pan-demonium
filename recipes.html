@@ -4,29 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pan-Demonium | Recipes</title>
-    <link rel="stylesheet" href="Webpages/css/style.css">
+    <link rel="stylesheet" href="Webpages/css/menu-style.css">
 </head>
+<link rel="icon" type = "image/png" href="Images/company_logo.png">
 <body>
     <header id="header">
         <div class="header-container">
-            <h1>PACHINKO | RECIPES</h1>
-            <nav id="navbar">
+            <h1>PACHINKO</h1>
+            <nav id="navbar" class="navbar">
                 <ul>
                     <li><a href="index.html">Homepage</a></li>
                     <li><a href="recipes.html">Recipes</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="discussion.html">Discussion Board</a></li>
+                    <li id="profile-nav" style="display: none;">
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <button id="login-btn">Login / Sign Up</button>
+                    <button id="logout-btn" style="display:none;">Logout</button>
                 </ul>
             </nav>
         </div>
     </header>
-    <nav>
+
+    <nav id="recipe-nav">
         <ul>
             <li><a href=>Newest</a></li>
             <li><a href=>Oldest</a></li>
             <li><a href=>Most Popular</a></li>
             <li><a href=>Least Popular</a></li>
         </ul>
-    <h3></h3>
+    </nav>
+    <section id="recipe-section">
+        <h2 class="recipe-list-title">Recipe Menu</h2>
+    
+        <div class="recipe-item">
+            <div class="recipe-thumbnail">
+                <img src="path_to_image.jpg" alt="Recipe Image">
+            </div>
+            <div class="recipe-details">
+                <h3 class="recipe-name">Beef Burger and Fries</h3>
+                <p class="recipe-description">A delicious burger, imagine the juicy beef flowing throughout that burger, all with a slice of
+                    cheese and a side of crispy fries.
+                </p>
+                <a href="recipe1.html" class="recipe-link">View Recipe</a>
+            </div>
+        </div>
+    
+        <div class="recipe-item">
+            <div class="recipe-thumbnail">
+                <img src="path_to_image2.jpg" alt="Recipe Image">
+            </div>
+            <div class="recipe-details">
+                <h3 class="recipe-name">French Style Roasted Chicken</h3>
+                <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
+                    with a hidden twist of lemon and garlic.
+                </p>
+                <a href="recipe2.html" class="recipe-link">View Recipe</a>
+            </div>
+        </div>
+
+        <div class="recipe-item">
+            <div class="recipe-thumbnail">
+                <img src="path_to_image3.jpg" alt="Recipe Image">
+            </div>
+            <div class="recipe-details">
+                <h3 class="recipe-name">Japanese Katsu Curry</h3>
+                <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
+                    with a hidden twist of lemon and garlic.
+                </p>
+                <a href="recipe2.html" class="recipe-link">View Recipe</a>
+            </div>
+        </div>
+
+        <div class="recipe-item">
+            <div class="recipe-thumbnail">
+                <img src="path_to_image4.jpg" alt="Recipe Image">
+            </div>
+            <div class="recipe-details">
+                <h3 class="recipe-name">Beef Wellington</h3>
+                <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
+                    with a hidden twist of lemon and garlic.
+                </p>
+                <a href="recipe2.html" class="recipe-link">View Recipe</a>
+            </div>
+        </div>
+
+        <div class="recipe-item">
+            <div class="recipe-thumbnail">
+                <img src="path_to_image5.jpg" alt="Recipe Image">
+            </div>
+            <div class="recipe-details">
+                <h3 class="recipe-name">Pan-Fried Gyoza</h3>
+                <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
+                    with a hidden twist of lemon and garlic.
+                </p>
+                <a href="recipe2.html" class="recipe-link">View Recipe</a>
+            </div>
+        </div>
+
+        <div class="recipe-item">
+            <div class="recipe-thumbnail">
+                <img src="path_to_image6.jpg" alt="Recipe Image">
+            </div>
+            <div class="recipe-details">
+                <h3 class="recipe-name">Margherita Pizza</h3>
+                <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
+                    with a hidden twist of lemon and garlic.
+                </p>
+                <a href="recipe2.html" class="recipe-link">View Recipe</a>
+            </div>
+        </div>
+    
+    </section>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Login</h2>
+            <form id="auth-form">
+                <input type="text" id="username" placeholder="Username (only for signup)" style="display:none;">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="toggle-auth">Don't have an account? <span>Sign Up</span></p>
+            <p id="auth-message"></p>
+        </div>
+    </div>
+
+    <script src="Webpages/js/login.js"></script>
 </body>
 </html> 

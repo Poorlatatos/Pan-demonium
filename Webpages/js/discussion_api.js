@@ -1,41 +1,76 @@
-document.getElementById('login-form').addEventListener('submit', async function(event) {
-    event.preventDefault();
+const messagesDbUrl = "https://kepperland-f9be.restdb.io/rest/discussion"; // Database for messages
+const apiKey = "679f353274defa5166181f1d"; // Same API key
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value; // In production, hash passwords before sending
+const user = JSON.parse(localStorage.getItem("user"));
+const postForm = document.getElementById("post-message-form");
+const messageInput = document.getElementById("message-input");
+const messagesContainer = document.getElementById("messages-container");
 
-    const apiKey = "679e46087a314f601beead6e"; // Replace with your actual API key
-    const dbUrl = "https://profile-e106.restdb.io/rest/contact"; // Replace with your database URL
+// 🔹 SHOW POST FORM IF USER IS LOGGED IN
+if (user) {
+    postForm.style.display = "block";
+}
 
+// 🔹 FETCH & DISPLAY MESSAGES
+async function fetchMessages() {
     try {
-        // Fetch user from database
-        const response = await fetch(`${dbUrl}?q={"email": "${email}"}`, {
+        const response = await fetch(messagesDbUrl, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 "x-apikey": apiKey
             }
         });
+        const messages = await response.json();
+        messagesContainer.innerHTML = ""; // Clear previous messages
 
-        const users = await response.json();
+        messages.forEach(msg => {
+            const messageElement = document.createElement("div");
+            messageElement.classList.add("message");
+            messageElement.innerHTML = `
+                <p><strong>${msg.username}</strong>: ${msg.message}</p>
+                <span class="timestamp">${new Date(msg.timestamp).toLocaleString()}</span>
+            `;
+            messagesContainer.appendChild(messageElement);
+        });
+    } catch (error) {
+        console.error("Error fetching messages:", error);
+    }
+}
 
-        if (users.length > 0) {
-            const user = users[0];
+// 🔹 POST A NEW MESSAGE
+postForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    
+    const messageText = messageInput.value.trim();
+    if (messageText === "") return;
 
-            if (user.password === password) { // In production, compare hashed passwords
-                localStorage.setItem("user", JSON.stringify(user)); // Store user info in localStorage
-                document.getElementById("message").textContent = "Login successful!";
-                setTimeout(() => {
-                    window.location.href = "dashboard.html"; // Redirect to dashboard
-                }, 1000);
-            } else {
-                document.getElementById("message").textContent = "Incorrect password!";
-            }
+    const messageData = {
+        username: user.username, // Get logged-in user's name
+        message: messageText,
+        timestamp: new Date().toISOString()
+    };
+
+    try {
+        const response = await fetch(messagesDbUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "x-apikey": apiKey
+            },
+            body: JSON.stringify(messageData)
+        });
+
+        if (response.ok) {
+            messageInput.value = ""; // Clear input field
+            fetchMessages(); // Refresh messages
         } else {
-            document.getElementById("message").textContent = "User not found!";
+            console.error("Error posting message");
         }
     } catch (error) {
-        console.error("Login error:", error);
-        document.getElementById("message").textContent = "An error occurred!";
+        console.error("Error posting message:", error);
     }
 });
+
+// 🔹 LOAD MESSAGES WHEN PAGE LOADS
+fetchMessages();

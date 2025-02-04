@@ -6,6 +6,7 @@
     <title>Pan-Demonium | Homepage</title>
     <link rel="stylesheet" href="Webpages/css/style.css">
 </head>
+<link rel="icon" type = "image/png" href="Images/company_logo.png">
 <body>
     <header id="header">
         <div class="header-container">
@@ -16,25 +17,37 @@
                     <li><a href="recipes.html">Recipes</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="discussion.html">Discussion Board</a></li>
+                    <li id="profile-nav" style="display: none;">
+                        <a href="profile.html">Profile</a>
+                    </li>
+                    <button id="login-btn">Login / Sign Up</button>
+                    <button id="logout-btn" style="display:none;">Logout</button>
                 </ul>
             </nav>
-
-            <div class="login-container">
-                <h2>Login</h2>
-                <form id="login-form">
-                    <input type="email" id="email" placeholder="Email" required>
-                    <input type="password" id="password" placeholder="Password" required>
-                    <button type="submit">Login</button>
-                </form>
-                <p id="message"></p>
-            </div>
-
         </div>
     </header>
-    <main>
+
+    <main id = "pandemonium-button">
         <a href="Gamepage/Pandemonium.html">PAN-DEMONIUM</a>
     </main>
 
-    <script src="Webpages/js/discussion_api.js"></script>
+    <!-- Login/Signup Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Login</h2>
+            <form id="auth-form">
+                <input type="text" id="username" placeholder="Username (only for signup)" style="display:none;">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="toggle-auth">Don't have an account? <span>Sign Up</span></p>
+            <p id="auth-message"></p>
+        </div>
+    </div>
+
+    <script src="Webpages/js/login.js"></script>
 </body>
 </html>

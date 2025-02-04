@@ -10,7 +10,6 @@ body, ul, h1, li{
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    text-align: center;
     background-color: #f8f1e1; /* Aged paper background */
     color: #2e2e2e;
 }
@@ -29,7 +28,6 @@ body {
     padding: 10px 20px;
     background: #222;
     color: white;
-    text-align: center;
 }
 
 #header h1 {
@@ -79,34 +77,19 @@ main a {
     transition: all 0.3s;
 }
 
-.navbar ul li {
-    margin-right: 15px;
+main a:hover ,#login-btn:hover , #logout-btn:hover{
+    background-color: #222;
+    color: #fff;
 }
 
-nav#navbar a:hover {
-    color: #fff;
-    text-decoration: underline;
+
+.navbar ul li {
+    margin-right: 15px;
 }
 
 .navbar ul li a {
     color: white;
     text-decoration: none;
-}
-
-nav#navbar ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav#navbar a {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
 }
 
 /* Buttons */
@@ -123,18 +106,6 @@ nav#navbar a {
 #login-btn:hover, #logout-btn:hover {
     background: #777;
     text-decoration: underline;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.pandemonium-button {
-    background: #222;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
-    font-family: Outfit, sans-serif;
-    font-size: 20px;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
@@ -184,46 +155,174 @@ button {
     color: blue;
 }
 
+.profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
 .profile-icon:hover {
     opacity: 0.8;
 }
 
-/* Profile Section */
-#profile-section {
-    max-width: 500px;
-    margin: 50px auto;
+/* Navigation Styles */
+nav#navbar {
+    background-color: #222; /* Dark background to contrast the body */
+    padding: 10px 0;
+}
+
+nav#navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav#navbar a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #d1b185; /* Soft gold color */
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav#navbar a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+/* Recipe Navigation Styles */
+#recipe-nav {
+    background-color: #222;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#recipe-nav ul {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#recipe-nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#recipe-nav ul li:last-child {
+    margin-right: 0;
+}
+
+#recipe-nav a {
+    color: #d1b185;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#recipe-nav a:hover {
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* Recipe Section */
+#recipe-section {
+    max-width: 800px;
+    margin: 40px auto;
     padding: 20px;
-    background: #fff8e7;
-    border: 8px double #8b5a2b;
+    background: #f8f1e1; /* Aged background */
+    border: 8px double #8b5a2b; /* Classic border */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
-    border-radius: 10px;
-    font-family: Outfit, sans-serif;
+    font-family: 'Playfair Display', serif;
 }
 
-p{
-    font-size: 22px;
-    margin: 10px 0;
-}
-
-#discussion-board {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #f9f9f9;
-}
-
-#messages {
+.recipe-list-title {
+    font-size: 36px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #5a3e1b;
+    border-bottom: 4px solid #8b5a2b;
+    padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-#post-message-form {
+/* Recipe Item */
+.recipe-item {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff8e7;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 2px solid #8b5a2b;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+.recipe-thumbnail {
+    flex: 1;
+    padding-right: 15px;
+}
+
+.recipe-thumbnail img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #8b5a2b;
+    border-radius: 5px;
+}
+
+.recipe-details {
+    flex: 3;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    color: #2e2e2e;
+}
+
+.recipe-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5a3e1b;
+    margin-bottom: 5px;
+}
+
+
+.recipe-description {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.recipe-link {
+    font-size: 18px;
+    color: #8b5a2b;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.recipe-link:hover {
+    color: #5a3e1b;
+    text-decoration: underline;
+}
+
 
 /* Media query for mobile view */
 @media (max-width: 1024px) {
@@ -266,7 +365,12 @@ p{
         cursor: pointer;
         margin-top: 10px;
     }
-    #profile-section {
-        width: 90%;
+    .recipe-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .recipe-thumbnail {
+        padding-bottom: 10px;
     }
 }
+

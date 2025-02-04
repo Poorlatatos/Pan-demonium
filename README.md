@@ -31,3 +31,15 @@ Changelog - 00:10 p.m. - 02/02/2025
 - Added in discussions_api.js
 - Added in login features
 - Created profile and username creation
+
+Changelog - 14:27 p.m. - 04/02/2025
+- Added in several new files
+    - login.js
+    - profile.js
+    - discussion.html
+    - profile.html
+    - menu-style.css
+- Updated all said added new files
+- Added in icon for website across all webpages
+- Updated recipes.html to have a more authenthic 1930's formatted webpage design
+- Gave all pages a hint of extra colour

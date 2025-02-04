@@ -14,3 +14,258 @@ body { padding: 0; margin: 0 }
 #unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
 #unity-fullscreen-button { cursor:pointer; float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Danfo&family=Outfit:wght@600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Wet+Paint&display=swap');
+
+/* General reset and styling */
+body, ul, h1, li{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    text-align: center;
+    background-color: #f8f1e1; /* Aged paper background */
+    color: #2e2e2e;
+}
+
+/* Header styling */
+#header {
+    background-color: #222; /* Dark background for header */
+    color: #fff; /* White text for contrast */
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #222;
+    color: white;
+    text-align: center;
+}
+
+#header h1 {
+    font-size: 4rem;
+    margin-bottom: 10px; /* Space between h1 and nav */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Navigation bar styling */
+#navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar ul li {
+    margin: 0 15px;
+}
+
+#navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-family: Outfit, sans-serif;
+}
+
+#navbar ul li a:hover {
+    background-color: #444; /* Highlight effect on hover */
+}
+
+/* Main link styling */
+main a {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    color: #222;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 20px 20px;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+
+.navbar ul li {
+    margin-right: 15px;
+}
+
+nav#navbar a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav#navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav#navbar a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Buttons */
+#login-btn, #logout-btn {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-family: Outfit, sans-serif;
+    font-size: 20px;
+}
+
+#login-btn:hover, #logout-btn:hover {
+    background: #777;
+    text-decoration: underline;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.pandemonium-button {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-family: Outfit, sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* 🔹 Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+
+/* Input Styling */
+input {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 8px;
+    font-family: Outfit, sans-serif;
+}
+
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+/* Auth Toggle */
+#toggle-auth {
+    cursor: pointer;
+    color: blue;
+}
+
+.profile-icon:hover {
+    opacity: 0.8;
+}
+
+/* Profile Section */
+#profile-section {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff8e7;
+    border: 8px double #8b5a2b;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border-radius: 10px;
+    font-family: Outfit, sans-serif;
+}
+
+p{
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+/* Media query for mobile view */
+@media (max-width: 1024px) {
+    /* Mobile menu styles */
+    #navbar{
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center;
+        width: 100%;
+        background-color: #222;
+    }
+
+    #navbar ul {
+        flex-direction: column; /* Ensure vertical stacking */
+        gap: 0; /* Remove gap for dropdown items */
+        padding: 10px 0;
+    }
+
+    #navbar ul li {
+        width: 100%; /* Full width for dropdown links */
+        text-align: center;
+    }
+
+    #navbar ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    /* Show the menu when active */
+    .navbar.active {
+        display: flex;
+    }
+
+    /* Style the toggle button */
+    .menu-toggle {
+        display: none; /* Hidden by default */
+        font-size: 2rem;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    #profile-section {
+        width: 90%;
+    }
+}

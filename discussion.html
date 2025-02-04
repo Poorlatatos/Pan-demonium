@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pan-Demonium | Contact</title>
+    <title>Pan-Demonium | Homepage</title>
     <link rel="stylesheet" href="Webpages/css/style.css">
 </head>
 <link rel="icon" type = "image/png" href="Images/company_logo.png">
@@ -27,8 +27,24 @@
             </nav>
         </div>
     </header>
+
+    <main>
+        <section id="discussion-board">
+            <h2>Discussion Board</h2>
+            <div id="messages-container">
+                <!-- Messages will be displayed here -->
+            </div>
+            
+            <!-- Post Form (Only for logged-in users) -->
+            <form id="post-message-form" style="display:none;">
+                <textarea id="message-input" placeholder="Write your message..." required></textarea>
+                <button type="submit">Post</button>
+            </form>
+        </section>
+    </main>
     
 
+    <!-- Login/Signup Modal -->
     <div id="auth-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -45,5 +61,6 @@
     </div>
 
     <script src="Webpages/js/login.js"></script>
+    <script src="Webpages/js/discussion.js"></script>
 </body>
 </html>
