@@ -43,3 +43,8 @@ Changelog - 14:27 p.m. - 04/02/2025
 - Added in icon for website across all webpages
 - Updated recipes.html to have a more authenthic 1930's formatted webpage design
 - Gave all pages a hint of extra colour
+
+Changelog - 01:43 a.m. - 05/02/2025
+- This is a fallback save, as I will be doing a lot of changing to the .js files.
+- Added in transition.js
+- All pages from one to another will play a Lottie animation whilst transitioning

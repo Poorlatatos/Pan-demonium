@@ -323,6 +323,21 @@ nav#navbar a:hover {
     text-decoration: underline;
 }
 
+#page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff8e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
 
 /* Media query for mobile view */
 @media (max-width: 1024px) {
