@@ -49,8 +49,14 @@ Changelog - 01:43 a.m. - 05/02/2025
 - Added in transition.js
 - All pages from one to another will play a Lottie animation whilst transitioning
 
-Changelog - 02:26 a.m. 08/02/2025
+Changelog - 02:26 a.m. - 08/02/2025
 - Changed all .js settings to go through a different API, Firebase is now being used.
 - Added in transition2.js
 - Added in model for Burger and Fries
 - Added in model for Japanese Katsu Curry
+
+Changelog - 03:55 a.m. - 08/02/2025
+- Added in model for Margherita Pizza
+- Added in recipe for Margherita Pizza
+- Added in recipe for Beef Burger And Fries
+- Added in recipe for French Style Roasted Chicken
