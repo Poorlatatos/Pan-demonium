@@ -1,127 +1,126 @@
-const apiKey = "679f353274defa5166181f1d";
-const dbUrl = "https://kepperland-f9be.restdb.io/rest/profile";
+// Import Firebase SDK
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+// Firebase Config
+const firebaseConfig = {
+    apiKey: "AIzaSyAdCufvmFN1m5PUm7ZtyTBHKh7WTIQfHYM",
+    authDomain: "profile-98f53.firebaseapp.com",
+    projectId: "profile-98f53",
+    storageBucket: "profile-98f53.firebasestorage.app",
+    messagingSenderId: "44472759931",
+    appId: "1:44472759931:web:0380a0c00a63c592c614de"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// **DOM Elements**
 const loginBtn = document.getElementById("login-btn");
 const logoutBtn = document.getElementById("logout-btn");
-const profileNav = document.getElementById("profile-nav");
 const modal = document.getElementById("auth-modal");
-const closeBtn = document.querySelector(".close");
-const authForm = document.getElementById("auth-form");
+const closeModal = document.querySelector(".close");
 const toggleAuth = document.getElementById("toggle-auth");
 const modalTitle = document.getElementById("modal-title");
-const usernameField = document.getElementById("username");
-const authMessage = document.getElementById("auth-message");
-const postMessageForm = document.getElementById("post-message-form"); // For discussion board
+const profileNav = document.getElementById("profile-nav");
 
-// Check if user is logged in
-const user = JSON.parse(localStorage.getItem("user"));
-if (user) {
-    loginBtn.style.display = "none";
-    logoutBtn.style.display = "block";
-    profileNav.style.display = "block"; // Show profile button
-    if (postMessageForm) postMessageForm.style.display = "block"; // Show discussion post form
-}
-
-// 🔹 Open Modal
+// **Open Login Modal**
 loginBtn.addEventListener("click", () => {
-    modal.style.display = "flex";
+    modal.style.display = "block";
 });
 
-// 🔹 Close Modal
-closeBtn.addEventListener("click", () => {
+// **Close Modal**
+closeModal.addEventListener("click", () => {
     modal.style.display = "none";
-    authMessage.textContent = ""; // Clear messages
 });
 
-// 🔹 Toggle between Login/Signup
-toggleAuth.addEventListener("click", () => {
-    if (usernameField.style.display === "none") {
-        usernameField.style.display = "block";
-        modalTitle.textContent = "Sign Up";
-        toggleAuth.innerHTML = `Already have an account? <span>Login</span>`;
-    } else {
-        usernameField.style.display = "none";
-        modalTitle.textContent = "Login";
-        toggleAuth.innerHTML = `Don't have an account? <span>Sign Up</span>`;
+// **Close Modal when clicking outside**
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
     }
 });
 
-// 🔹 Handle Authentication
-authForm.addEventListener("submit", async (event) => {
+// **Toggle Between Login & Signup**
+toggleAuth.addEventListener("click", () => {
+    if (modalTitle.textContent === "Login") {
+        modalTitle.textContent = "Sign Up";
+        document.getElementById("username").style.display = "block";
+        toggleAuth.innerHTML = 'Already have an account? <span>Login</span>';
+    } else {
+        modalTitle.textContent = "Login";
+        document.getElementById("username").style.display = "none";
+        toggleAuth.innerHTML = 'Don\'t have an account? <span>Sign Up</span>';
+    }
+});
+
+// Handle Login / Signup
+document.getElementById("auth-form").addEventListener("submit", async (event) => {
     event.preventDefault();
     
-    const username = usernameField.value.trim();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
+    const usernameInput = document.getElementById("username"); // Username field
+    const username = usernameInput.value.trim();
 
-    if (modalTitle.textContent === "Sign Up") {
-        // 🔹 Check if email already exists
-        const checkResponse = await fetch(`${dbUrl}?q={"email":"${email}"}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "x-apikey": apiKey
-            }
-        });
-
-        const existingUsers = await checkResponse.json();
-        if (existingUsers.length > 0) {
-            authMessage.textContent = "This email is already in use. Please log in.";
-            authMessage.style.color = "red";
+    if (document.getElementById("modal-title").textContent === "Sign Up") {
+        if (!username) {
+            alert("Please enter a username!");
             return;
         }
+        
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(async (userCredential) => {
+            const user = userCredential.user;
+            
+            // **Save Username in Firestore**
+            await setDoc(doc(db, "users", user.uid), {
+                username: username,
+                email: user.email
+            });
 
-        // 🔹 Signup Request
-        const signupResponse = await fetch(dbUrl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "x-apikey": apiKey
-            },
-            body: JSON.stringify({ username, email, password })
-        });
-
-        if (signupResponse.ok) {
-            authMessage.textContent = "Account created! Please log in.";
-            authMessage.style.color = "green";
-            setTimeout(() => toggleAuth.click(), 1000); // Switch to Login
-        } else {
-            authMessage.textContent = "Error creating account.";
-            authMessage.style.color = "red";
-        }
+            console.log("User signed up & username saved:", user);
+            
+            // ✅ Redirect to profile page after sign-up
+            window.location.href = "profile.html";
+        })
+        .catch((error) => console.error("Signup error:", error.message));
     } else {
-        // 🔹 Login Request
-        const response = await fetch(`${dbUrl}?q={"email":"${email}"}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "x-apikey": apiKey
-            }
-        });
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            console.log("User signed in:", userCredential.user);
 
-        const users = await response.json();
-        if (users.length > 0 && users[0].password === password) {
-            localStorage.setItem("user", JSON.stringify(users[0])); // Store user data
-            authMessage.textContent = "Login successful! Redirecting...";
-            authMessage.style.color = "green";
-
-            profileNav.style.display = "block"; // Show profile button
-            if (postMessageForm) postMessageForm.style.display = "block"; // Show discussion form
-
-            setTimeout(() => {
-                window.location.href = "profile.html"; // Redirect to profile page
-            }, 1000);
-        } else {
-            authMessage.textContent = "Invalid email or password.";
-            authMessage.style.color = "red";
-        }
+            // ✅ Redirect to profile page after login
+            window.location.href = "profile.html";
+        })
+        .catch((error) => console.error("Login error:", error.message));
     }
 });
 
-// 🔹 Logout Function
+
+// **Monitor Authentication State**
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log("User is logged in:", user.email);
+        profileNav.style.display = "inline";  // Show profile link
+        loginBtn.style.display = "none";  // Hide login button
+        logoutBtn.style.display = "inline";  // Show logout button
+    } else {
+        console.log("User is logged out");
+        profileNav.style.display = "none";  // Hide profile link
+        loginBtn.style.display = "inline";  // Show login button
+        logoutBtn.style.display = "none";  // Hide logout button
+    }
+});
+
+// **Handle Logout**
 logoutBtn.addEventListener("click", () => {
-    localStorage.removeItem("user");
-    profileNav.style.display = "none"; // Hide profile button
-    if (postMessageForm) postMessageForm.style.display = "none"; // Hide discussion form
-    window.location.href = "index.html"; // Redirect to homepage after logout
+    signOut(auth).then(() => {
+        console.log("User signed out");
+    }).catch((error) => {
+        console.error("Logout error:", error.message);
+    });
 });

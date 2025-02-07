@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pan-Demonium | Recipes</title>
     <link rel="stylesheet" href="Webpages/css/menu-style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
+
 </head>
 <link rel="icon" type = "image/png" href="Images/company_logo.png">
 <body>
@@ -39,88 +41,125 @@
             <li><a href=>Least Popular</a></li>
         </ul>
     </nav>
-    <section id="recipe-section">
-        <h2 class="recipe-list-title">Recipe Menu</h2>
+    <div class="content-container">
+        <section id="recipe-section">
+            <h2 class="recipe-list-title">Recipe Menu</h2>
+        
+            <div class="recipe-item">
+                <div class="recipe-thumbnail">
+                    <model-viewer 
+                        src="3D Models/burger_and_fries.glb" 
+                        alt="3D Model of Burger and Fries" 
+                        auto-rotate 
+                        camera-controls 
+                        ar>
+                    </model-viewer>
+                </div>
+                <div class="recipe-details">
+                    <h3 class="recipe-name">Beef Burger and Fries</h3>
+                    <p class="recipe-description">A delicious burger, imagine the juicy beef flowing throughout that burger, all with a slice of
+                        cheese and a side of crispy fries.
+                    </p>
+                    <a href="Recipes/beef_burger_and_fries.html" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+        
+            <div class="recipe-item">
+                <div class="recipe-thumbnail">
+                    <img src="path_to_image2.jpg" alt="Recipe Image">
+                </div>
+                <div class="recipe-details">
+                    <h3 class="recipe-name">French Style Roasted Chicken</h3>
+                    <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
+                        with a hidden twist of lemon and garlic.
+                    </p>
+                    <a href="Recipes/roasted-french-chicken.html" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+
+            <div class="recipe-item">
+                <div class="recipe-thumbnail">
+                    <model-viewer 
+                        src="3D Models/katsu_curry.glb" 
+                        alt="3D Model of Japanese Katsu Curry" 
+                        auto-rotate 
+                        camera-controls 
+                        ar>
+                    </model-viewer>
+                </div>
+                <div class="recipe-details">
+                    <h3 class="recipe-name">Japanese Katsu Curry</h3>
+                    <p class="recipe-description">A warm and delicious traditional Japanese meal. One that would keep you warm even on the coldest days.
+                    </p>
+                    <a href="Recipes/japanese-katsu-curry.html" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+
+            <div class="recipe-item">
+                <div class="recipe-thumbnail">
+                    <img src="path_to_image4.jpg" alt="Recipe Image">
+                </div>
+                <div class="recipe-details">
+                    <h3 class="recipe-name">Beef Wellington</h3>
+                    <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
+                        with a hidden twist of lemon and garlic.
+                    </p>
+                    <a href="recipe2.html" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+
+            <div class="recipe-item">
+                <div class="recipe-thumbnail">
+                    <img src="path_to_image5.jpg" alt="Recipe Image">
+                </div>
+                <div class="recipe-details">
+                    <h3 class="recipe-name">Pan-Fried Gyoza</h3>
+                    <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
+                        with a hidden twist of lemon and garlic.
+                    </p>
+                    <a href="recipe2.html" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+
+            <div class="recipe-item">
+                <div class="recipe-thumbnail">
+                    <img src="path_to_image6.jpg" alt="Recipe Image">
+                </div>
+                <div class="recipe-details">
+                    <h3 class="recipe-name">Margherita Pizza</h3>
+                    <p class="recipe-description">A simple and easy pizza recipe with a classic tomato sauce, fresh mozzarella, and basil leaves.
+                        You won't leave this pizza untouched.
+                    </p>
+                    <a href="Webpages/Recipe Pages/pizza-margherita.html" class="recipe-link">View Recipe</a>
+                </div>
+            </div>
+
+        </section>
+
+        <aside id="sidebar">
+            <h2 class="sidebar-title">FEATURED RECIPES</h2>
+            
+            <div class="featured-recipe">
+                <model-viewer 
+                src="3D Models/katsu_curry.glb" 
+                alt="3D Model of Japanese Katsu Curry" 
+                auto-rotate 
+                camera-controls 
+                ar>
+            </model-viewer>
+                <h3>Japanese Katsu Curry</h3>
+                <p>A warm and delicious traditional Japanese meal. One that would keep you warm even on the coldest days.</p>
+                <a href="Recipes/japanese-katsu-curry.html" class="recipe-link">View Recipe</a>
+            </div>
     
-        <div class="recipe-item">
-            <div class="recipe-thumbnail">
-                <img src="path_to_image.jpg" alt="Recipe Image">
+            <div class="featured-recipe">
+                <img src="path_to_featured_image2.jpg" alt="Featured Recipe">
+                <h3>Spaghetti Carbonara</h3>
+                <p>A creamy and cheesy Italian pasta dish with crispy pancetta.</p>
+                <a href="carbonara.html" class="recipe-link">View Recipe</a>
             </div>
-            <div class="recipe-details">
-                <h3 class="recipe-name">Beef Burger and Fries</h3>
-                <p class="recipe-description">A delicious burger, imagine the juicy beef flowing throughout that burger, all with a slice of
-                    cheese and a side of crispy fries.
-                </p>
-                <a href="recipe1.html" class="recipe-link">View Recipe</a>
-            </div>
-        </div>
-    
-        <div class="recipe-item">
-            <div class="recipe-thumbnail">
-                <img src="path_to_image2.jpg" alt="Recipe Image">
-            </div>
-            <div class="recipe-details">
-                <h3 class="recipe-name">French Style Roasted Chicken</h3>
-                <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
-                    with a hidden twist of lemon and garlic.
-                </p>
-                <a href="recipe2.html" class="recipe-link">View Recipe</a>
-            </div>
-        </div>
-
-        <div class="recipe-item">
-            <div class="recipe-thumbnail">
-                <img src="path_to_image3.jpg" alt="Recipe Image">
-            </div>
-            <div class="recipe-details">
-                <h3 class="recipe-name">Japanese Katsu Curry</h3>
-                <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
-                    with a hidden twist of lemon and garlic.
-                </p>
-                <a href="recipe2.html" class="recipe-link">View Recipe</a>
-            </div>
-        </div>
-
-        <div class="recipe-item">
-            <div class="recipe-thumbnail">
-                <img src="path_to_image4.jpg" alt="Recipe Image">
-            </div>
-            <div class="recipe-details">
-                <h3 class="recipe-name">Beef Wellington</h3>
-                <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
-                    with a hidden twist of lemon and garlic.
-                </p>
-                <a href="recipe2.html" class="recipe-link">View Recipe</a>
-            </div>
-        </div>
-
-        <div class="recipe-item">
-            <div class="recipe-thumbnail">
-                <img src="path_to_image5.jpg" alt="Recipe Image">
-            </div>
-            <div class="recipe-details">
-                <h3 class="recipe-name">Pan-Fried Gyoza</h3>
-                <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
-                    with a hidden twist of lemon and garlic.
-                </p>
-                <a href="recipe2.html" class="recipe-link">View Recipe</a>
-            </div>
-        </div>
-
-        <div class="recipe-item">
-            <div class="recipe-thumbnail">
-                <img src="path_to_image6.jpg" alt="Recipe Image">
-            </div>
-            <div class="recipe-details">
-                <h3 class="recipe-name">Margherita Pizza</h3>
-                <p class="recipe-description">Succulent roast chicken infused with fresh herbs and roasted to perfection. All
-                    with a hidden twist of lemon and garlic.
-                </p>
-                <a href="recipe2.html" class="recipe-link">View Recipe</a>
-            </div>
-        </div>
-    
-    </section>
+        </aside>
+    </div>
 
     <div id="auth-modal" class="modal">
         <div class="modal-content">
@@ -138,7 +177,7 @@
     </div>
 
     <script src="Webpages/js/transition.js"></script>
-    <script src="Webpages/js/login.js"></script>
+    <script type="module" src="Webpages/js/login.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
 </body>
 </html> 

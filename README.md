@@ -48,3 +48,9 @@ Changelog - 01:43 a.m. - 05/02/2025
 - This is a fallback save, as I will be doing a lot of changing to the .js files.
 - Added in transition.js
 - All pages from one to another will play a Lottie animation whilst transitioning
+
+Changelog - 02:26 a.m. 08/02/2025
+- Changed all .js settings to go through a different API, Firebase is now being used.
+- Added in transition2.js
+- Added in model for Burger and Fries
+- Added in model for Japanese Katsu Curry

@@ -1,55 +1,41 @@
-const apiKey = "679f353274defa5166181f1d";
-const dbUrl = "https://kepperland-f9be.restdb.io/rest/profile";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const user = JSON.parse(localStorage.getItem("user"));
-if (!user) {
-    window.location.href = "index.html"; // Redirect to homepage if not logged in
-}
 
-// Set the logged-in user's name and email on the profile page
-document.getElementById("userName").innerText = user.username;
-document.getElementById("userEmail").innerText = user.email;
+// Firebase Config (Must be the same as in your other pages)
+const firebaseConfig = {
+    apiKey: "AIzaSyAdCufvmFN1m5PUm7ZtyTBHKh7WTIQfHYM",
+    authDomain: "profile-98f53.firebaseapp.com",
+    projectId: "profile-98f53",
+    storageBucket: "profile-98f53.firebasestorage.app",
+    messagingSenderId: "44472759931",
+    appId: "1:44472759931:web:0380a0c00a63c592c614de"
+};
 
-// Fetch user profile data from restdb.io
-function fetchUserProfile(userId) {
-    fetch(`${dbUrl}/${userId}`, {
-        headers: {
-            "Content-Type": "application/json",
-            "x-apikey": apiKey
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data) {
-            // Handle other profile data if needed
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// DOM Elements
+const userName = document.getElementById("userName");
+const userEmail = document.getElementById("userEmail");
+
+// **Check User Authentication State**
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        // Display Email
+        userEmail.textContent = user.email;
+
+        // **Fetch Username from Firestore**
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        if (userDoc.exists()) {
+            userName.textContent = userDoc.data().username;
         } else {
-            alert('Profile not found');
+            userName.textContent = "No Username Set";
         }
-    });
-}
-
-if (user) {
-    // If the user is logged in, hide the login button and show the logout button
-    document.getElementById("login-btn").style.display = "none";
-    document.getElementById("logout-btn").style.display = "block";
-    document.getElementById("profile-nav").style.display = "block"; // Show profile nav link
-    document.getElementById("userName").innerText = user.username;
-    document.getElementById("userEmail").innerText = user.email;
-} else {
-    // If the user is not logged in, show the login button and hide the logout button
-    document.getElementById("login-btn").style.display = "block";
-    document.getElementById("logout-btn").style.display = "none";
-    document.getElementById("profile-nav").style.display = "none"; // Hide profile nav link
-}
-
-// Logout function
-document.getElementById("logout-btn").addEventListener("click", () => {
-    localStorage.removeItem("user");
-    document.getElementById("login-btn").style.display = "block";
-    document.getElementById("logout-btn").style.display = "none";
-    document.getElementById("profile-nav").style.display = "none"; // Hide profile nav link
-    window.location.href = "index.html"; // Redirect to homepage after logout
+    } else {
+        window.location.href = "index.html";
+    }
 });
-
-// Fetch and display the user's profile data
-fetchUserProfile(user._id); // Pass the logged-in user's ID from local storage

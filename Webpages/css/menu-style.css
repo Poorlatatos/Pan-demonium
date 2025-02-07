@@ -8,7 +8,7 @@ body, ul, h1, li{
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Playfair Display', serif;
     line-height: 1.6;
     background-color: #f8f1e1; /* Aged paper background */
     color: #2e2e2e;
@@ -240,8 +240,9 @@ nav#navbar a:hover {
 
 /* Recipe Section */
 #recipe-section {
+    flex: 3;
     max-width: 800px;
-    margin: 40px auto;
+    margin: auto;
     padding: 20px;
     background: #f8f1e1; /* Aged background */
     border: 8px double #8b5a2b; /* Classic border */
@@ -339,6 +340,86 @@ nav#navbar a:hover {
     transition: opacity 0.5s ease-in-out;
 }
 
+/* Layout for recipes + sidebar */
+.content-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    flex: 1;
+    max-height: fit-content;
+    background: #fff8e7;
+    padding: 20px;
+    border: 8px double #8b5a2b;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.sidebar-title {
+    font-size: 28px;
+    color: #5a3e1b;
+    margin-bottom: 15px;
+    border-bottom: 4px solid #8b5a2b;
+}
+
+.featured-recipe {
+    background: white;
+    padding: 10px;
+    border: 2px solid #8b5a2b;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.featured-recipe img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.featured-recipe h3 {
+    font-size: 20px;
+    color: #5a3e1b;
+    margin-top: 10px;
+}
+
+.featured-recipe h2 {
+    font-size: 20px;
+    color: #5a3e1b;
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.featured-recipe p {
+    font-size: 14px;
+    color: #444;
+}
+
+.featured-recipe .recipe-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #8b5a2b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.featured-recipe .recipe-link:hover {
+    text-decoration: underline;
+}
+
+model-viewer {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
 /* Media query for mobile view */
 @media (max-width: 1024px) {
     /* Mobile menu styles */
@@ -386,6 +467,15 @@ nav#navbar a:hover {
     }
     .recipe-thumbnail {
         padding-bottom: 10px;
+    }
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sidebar {
+        width: 100%;
+        margin-top: 20px;
     }
 }
 

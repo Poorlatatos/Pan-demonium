@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan-Demonium | Beef Burger and Fries</title>
+    <link rel="stylesheet" href="/Webpages/css/style.css">
+    <link rel="stylesheet" href="/Webpages/css/recipe.css">
+</head>
+<link rel="icon" type = "image/png" href="/Images/company_logo.png">
+<body>
+    <div id="page-transition">
+        <div id="lottie-animation"></div>
+    </div>
+    <header id="header">
+        <div class="header-container">
+            <h1>PACHINKO</h1>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="/index.html">Homepage</a></li>
+                    <li><a href="/recipes.html">Recipes</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/discussion.html">Discussion Board</a></li>
+                    <li id="profile-nav" style="display: none;">
+                        <a href="/profile.html">Profile</a>
+                    </li>
+                    <button id="login-btn">Login / Sign Up</button>
+                    <button id="logout-btn" style="display:none;">Logout</button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="newspaper">
+    
+            <article>
+                <img src="/Images/roasted_chicken.jpg" alt="French-Style Roasted Chicken">
+                <h2 class="recipe-title">**French-Style Roasted Chicken**</h2>
+                <h3 class="sub-heading">A Classic Recipe from the Heart of France</h3>
+                <p class="intro">The art of French roasting transforms a simple chicken into a dish of golden perfection. Follow this traditional recipe to bring home the flavors of Parisian kitchens.</p>
+                
+                <div class="recipe-details">
+                    <p><strong>Prep Time:</strong> 15 mins | <strong>Cook Time:</strong> 90 mins | <strong>Serves:</strong> 4-6</p>
+                </div>
+    
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>1 whole chicken (about 4-5 lbs)</li>
+                    <li>3 tbsp unsalted butter, softened</li>
+                    <li>3 cloves garlic, minced</li>
+                    <li>1 tbsp fresh thyme</li>
+                    <li>1 tbsp fresh rosemary, chopped</li>
+                    <li>1 tbsp fresh parsley, chopped</li>
+                    <li>1 tsp sea salt</li>
+                    <li>1/2 tsp black pepper</li>
+                    <li>1 lemon, cut into wedges</li>
+                    <li>1 onion, quartered</li>
+                    <li>1/2 cup white wine or chicken broth</li>
+                    <li>1 tbsp olive oil</li>
+                </ul>
+    
+                <h3>Instructions:</h3>
+                <ol>
+                    <li><strong>Preheat the oven:</strong> Set to 425°F (220°C). Ensure the oven rack is in the middle position.</li>
+                    <li><strong>Prepare the chicken:</strong> Pat the chicken dry with paper towels. Loosen the skin over the breasts with your fingers.</li>
+                    <li><strong>Season and stuff:</strong> Rub butter under the skin. Mix garlic, thyme, rosemary, parsley, salt, and pepper, and rub it all over. Stuff the cavity with lemon wedges and onion.</li>
+                    <li><strong>Truss and roast:</strong> Tie the legs together with kitchen twine. Place in a roasting pan, drizzle with olive oil, and pour white wine into the pan.</li>
+                    <li><strong>Baste for flavor:</strong> Roast for 30 minutes, then baste every 15 minutes with pan juices.</li>
+                    <li><strong>Final crisping:</strong> Increase the temperature to 450°F (230°C) for the last 15 minutes for crispy skin.</li>
+                    <li><strong>Rest and serve:</strong> Remove from the oven, tent with foil, and let it rest for 10 minutes before carving.</li>
+                </ol>
+    
+                <p class="closing">Enjoy your authentic French-style roasted chicken with a side of buttered vegetables or fresh baguette!</p>
+            </article>
+    
+        </div>
+    </main>
+
+    <!-- Login/Signup Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Login</h2>
+            <form id="auth-form">
+                <input type="text" id="username" placeholder="Username (only for signup)" style="display:none;">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="toggle-auth">Don't have an account? <span>Sign Up</span></p>
+            <p id="auth-message"></p>
+        </div>
+    </div>
+
+    <script src="/Webpages/js/transition2.js"></script>
+    <script type="module" src="/Webpages/js/login.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+
+</body>
+</html>
