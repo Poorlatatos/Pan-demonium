@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan-Demonium | Beef Burger and Fries</title>
+    <link rel="stylesheet" href="../Webpages/css/style.css">
+    <link rel="stylesheet" href="../Webpages/css/recipe.css">
+</head>
+<link rel="icon" type = "image/png" href="/Images/company_logo.png">
+<body>
+    <div id="page-transition">
+        <div id="lottie-animation"></div>
+    </div>
+    <header id="header">
+        <div class="header-container">
+            <h1>PACHINKO</h1>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="/index.html">Homepage</a></li>
+                    <li><a href="/recipes.html">Recipes</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/discussion.html">Discussion Board</a></li>
+                    <li id="profile-nav" style="display: none;">
+                        <a href="../profile.html">Profile</a>
+                    </li>
+                    <button id="login-btn">Login / Sign Up</button>
+                    <button id="logout-btn" style="display:none;">Logout</button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="newspaper">
+            <article>
+                <img src="/Images/beef_wellington.jpg" alt="Classic Beef Wellington">
+                <h2 class="recipe-title">**Beef Wellington**</h2>
+                <h3 class="sub-heading">A Luxurious and Flavorful Masterpiece</h3>
+                <p class="intro">
+                    Beef Wellington is the ultimate indulgence—a tender beef fillet coated in savory mushroom duxelles, wrapped in prosciutto and golden, flaky puff pastry. Perfect for special occasions or an elegant dinner.
+                </p>
+            
+                <div class="recipe-details">
+                    <p><strong>Prep Time:</strong> 30 mins | <strong>Chill Time:</strong> 30 mins | <strong>Cook Time:</strong> 40 mins | <strong>Serves:</strong> 4</p>
+                </div>
+            
+                <h3>Ingredients:</h3>
+            
+                <h4>For the Beef:</h4>
+                <ul>
+                    <li>1 (1.5 lb) beef tenderloin</li>
+                    <li>Salt and black pepper, to taste</li>
+                    <li>2 tbsp olive oil</li>
+                    <li>2 tbsp Dijon mustard</li>
+                </ul>
+            
+                <h4>For the Mushroom Duxelles:</h4>
+                <ul>
+                    <li>8 oz cremini or button mushrooms, finely chopped</li>
+                    <li>2 tbsp unsalted butter</li>
+                    <li>2 cloves garlic, minced</li>
+                    <li>1 shallot, finely diced</li>
+                    <li>1 tsp fresh thyme leaves</li>
+                    <li>Salt and black pepper, to taste</li>
+                </ul>
+            
+                <h4>For Assembly:</h4>
+                <ul>
+                    <li>6 slices prosciutto</li>
+                    <li>1 sheet puff pastry, thawed</li>
+                    <li>1 egg yolk, beaten (for egg wash)</li>
+                    <li>All-purpose flour (for dusting)</li>
+                </ul>
+            
+                <h3>Instructions:</h3>
+            
+                <h4>Preparing the Beef:</h4>
+                <ol>
+                    <li><strong>Season the tenderloin:</strong> Generously season the beef with salt and black pepper.</li>
+                    <li><strong>Sear the beef:</strong> Heat olive oil in a pan over high heat and sear the beef on all sides until golden brown (about 2 minutes per side). Remove from heat and brush all over with Dijon mustard. Let cool.</li>
+                </ol>
+            
+                <h4>Making the Mushroom Duxelles:</h4>
+                <ol>
+                    <li><strong>Sauté the mushrooms:</strong> In the same pan, melt butter over medium heat. Add mushrooms, shallots, garlic, and thyme. Cook until all moisture evaporates and mixture becomes paste-like (about 10 minutes).</li>
+                    <li><strong>Season:</strong> Add salt and pepper to taste. Let cool.</li>
+                </ol>
+            
+                <h4>Assembling the Wellington:</h4>
+                <ol>
+                    <li><strong>Lay out the prosciutto:</strong> On a sheet of plastic wrap, arrange the prosciutto slices overlapping slightly.</li>
+                    <li><strong>Spread the mushroom duxelles:</strong> Evenly spread the mushroom mixture over the prosciutto.</li>
+                    <li><strong>Wrap the beef:</strong> Place the beef tenderloin on top and tightly roll everything together using the plastic wrap. Chill for 30 minutes to set the shape.</li>
+                </ol>
+            
+                <h4>Wrapping in Puff Pastry:</h4>
+                <ol>
+                    <li><strong>Roll out the puff pastry:</strong> On a floured surface, roll out the pastry slightly larger than the wrapped beef.</li>
+                    <li><strong>Encase the beef:</strong> Remove the plastic wrap from the beef and place it in the center of the pastry. Fold over and seal the edges tightly.</li>
+                    <li><strong>Brush with egg wash:</strong> Brush the pastry with beaten egg yolk for a golden finish.</li>
+                    <li><strong>Chill again:</strong> Refrigerate for 10 minutes while preheating the oven to 400°F (200°C).</li>
+                </ol>
+            
+                <h4>Baking and Serving:</h4>
+                <ol>
+                    <li><strong>Bake:</strong> Place the wrapped beef on a baking sheet and bake for 35-40 minutes until golden brown and the internal temperature reaches 125°F (52°C) for medium-rare.</li>
+                    <li><strong>Rest:</strong> Let the Wellington rest for 10 minutes before slicing.</li>
+                    <li><strong>Serve:</strong> Slice into thick portions and enjoy with a side of roasted vegetables or a rich red wine sauce.</li>
+                </ol>
+            
+                <p class="closing">
+                    Savor the rich, buttery layers of puff pastry, the earthy depth of mushrooms, and the juicy tenderness of perfectly cooked beef—Beef Wellington at its finest!
+                </p>
+            </article>
+            
+        </div>
+    
+        </div>
+    </main>
+
+    <!-- Login/Signup Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Login</h2>
+            <form id="auth-form">
+                <input type="text" id="username" placeholder="Username (only for signup)" style="display:none;">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="toggle-auth">Don't have an account? <span>Sign Up</span></p>
+            <p id="auth-message"></p>
+        </div>
+    </div>
+
+    <script src="../Webpages/js/transition2.js"></script>
+    <script type="module" src="../Webpages/js/login.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+
+</body>
+</html>

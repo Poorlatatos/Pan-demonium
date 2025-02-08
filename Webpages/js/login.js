@@ -85,7 +85,7 @@ document.getElementById("auth-form").addEventListener("submit", async (event) =>
             console.log("User signed up & username saved:", user);
             
             // ✅ Redirect to profile page after sign-up
-            window.location.href = "profile.html";
+            window.location.href = "../profile.html";
         })
         .catch((error) => console.error("Signup error:", error.message));
     } else {
@@ -94,7 +94,7 @@ document.getElementById("auth-form").addEventListener("submit", async (event) =>
             console.log("User signed in:", userCredential.user);
 
             // ✅ Redirect to profile page after login
-            window.location.href = "profile.html";
+            window.location.href = "../profile.html";
         })
         .catch((error) => console.error("Login error:", error.message));
     }

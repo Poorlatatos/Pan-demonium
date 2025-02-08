@@ -60,3 +60,9 @@ Changelog - 03:55 a.m. - 08/02/2025
 - Added in recipe for Margherita Pizza
 - Added in recipe for Beef Burger And Fries
 - Added in recipe for French Style Roasted Chicken
+
+Changelog - 00:07 a.m. - 09/02/2025
+- Added in model for Beef Wellington
+- Added in recipe page for Beef Wellington
+- Fixed discussion.js username issues
+- Updated several webpage link issues
