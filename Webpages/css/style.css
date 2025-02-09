@@ -362,7 +362,7 @@ h2{
     transform: translate(-50%, -50%) scale(0.95);
 }
 
-img {
+.pan-logo {
     width: auto; /* Adjust as needed */
     height: auto;
     position: relative;

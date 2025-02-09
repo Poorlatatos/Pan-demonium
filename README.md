@@ -73,3 +73,7 @@ Changelog - 14:16 p.m. - 09/02/2025
 - Changed index.html game button to appropriate size
 - Added branding logos for game
 - Updated about.html
+
+Changelog - 17:08 p.m. - 09/02/2025
+- Added in several pictures of food
+- Updated all recipe pages with new images
