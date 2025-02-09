@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan-Demonium | Margherita Pizza</title>
+    <link rel="stylesheet" href="../Webpages/css/style.css">
+    <link rel="stylesheet" href="../Webpages/css/recipe.css">
+</head>
+<link rel="icon" type = "image/png" href="/Images/company_logo.png">
+<body>
+    <div id="page-transition">
+        <div id="lottie-animation"></div>
+    </div>
+    <header id="header">
+        <div class="header-container">
+            <h1>PACHINKO</h1>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="/index.html">Homepage</a></li>
+                    <li><a href="/recipes.html">Recipes</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/discussion.html">Discussion Board</a></li>
+                    <li id="profile-nav" style="display: none;">
+                        <a href="/profile.html">Profile</a>
+                    </li>
+                    <button id="login-btn">Login / Sign Up</button>
+                    <button id="logout-btn" style="display:none;">Logout</button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="newspaper">
+            <article>
+                <img src="/Images/katsu_curry.jpg" alt="Japanese Katsu Curry">
+                <h2 class="recipe-title">**Japanese Katsu Curry**</h2>
+                <h3 class="sub-heading">A Crispy and Flavorful Classic with Rich Curry Sauce</h3>
+                <p class="intro">
+                    A beloved Japanese comfort dish, Katsu Curry combines crispy breaded pork (or chicken) cutlet with a thick, aromatic curry sauce, served over fluffy rice. Perfectly balanced flavors make this a satisfying meal!
+                </p>
+            
+                <div class="recipe-details">
+                    <p><strong>Prep Time:</strong> 20 mins | <strong>Cook Time:</strong> 30 mins | <strong>Serves:</strong> 2-4</p>
+                </div>
+            
+                <h3>Ingredients:</h3>
+            
+                <h4>For the Curry Sauce:</h4>
+                <ul>
+                    <li>1 tbsp vegetable oil</li>
+                    <li>1 onion, finely chopped</li>
+                    <li>1 carrot, diced</li>
+                    <li>2 cloves garlic, minced</li>
+                    <li>1 tbsp curry powder</li>
+                    <li>1 tbsp garam masala</li>
+                    <li>2 tbsp flour</li>
+                    <li>2 cups chicken or vegetable broth</li>
+                    <li>1 tbsp soy sauce</li>
+                    <li>1 tbsp Worcestershire sauce</li>
+                    <li>1 tbsp honey</li>
+                    <li>1 tsp grated ginger</li>
+                    <li>Salt and pepper to taste</li>
+                </ul>
+            
+                <h4>For the Katsu:</h4>
+                <ul>
+                    <li>2 boneless pork chops or chicken breasts</li>
+                    <li>Salt and pepper to taste</li>
+                    <li>½ cup all-purpose flour</li>
+                    <li>1 egg, beaten</li>
+                    <li>1 cup panko breadcrumbs</li>
+                    <li>Vegetable oil (for frying)</li>
+                </ul>
+            
+                <h4>For Serving:</h4>
+                <ul>
+                    <li>2 cups cooked Japanese short-grain rice</li>
+                    <li>1 green onion, finely chopped (optional)</li>
+                    <li>Fukujinzuke (Japanese pickles) for garnish</li>
+                </ul>
+            
+                <h3>Instructions:</h3>
+            
+                <h4>Making the Curry Sauce:</h4>
+                <ol>
+                    <li><strong>Sauté the vegetables:</strong> Heat oil in a pan over medium heat. Add onions and carrots, cooking until softened.</li>
+                    <li><strong>Add garlic and spices:</strong> Stir in garlic, curry powder, and garam masala, cooking for 1 minute until fragrant.</li>
+                    <li><strong>Thicken the sauce:</strong> Sprinkle flour over the mixture, stirring continuously for another minute.</li>
+                    <li><strong>Simmer:</strong> Gradually add broth while stirring, then mix in soy sauce, Worcestershire sauce, honey, and grated ginger.</li>
+                    <li><strong>Cook:</strong> Let simmer for 15-20 minutes until the sauce thickens. Season with salt and pepper to taste.</li>
+                </ol>
+            
+                <h4>Preparing the Katsu:</h4>
+                <ol>
+                    <li><strong>Flatten the meat:</strong> Gently pound pork or chicken to an even thickness.</li>
+                    <li><strong>Season:</strong> Sprinkle with salt and pepper.</li>
+                    <li><strong>Bread the cutlets:</strong> Dredge in flour, dip into beaten egg, and coat with panko breadcrumbs.</li>
+                    <li><strong>Fry:</strong> Heat oil in a pan to 350°F (175°C) and fry cutlets for 3-4 minutes per side until golden brown and crispy.</li>
+                    <li><strong>Drain:</strong> Transfer to a paper towel-lined plate to remove excess oil.</li>
+                    <li><strong>Slice:</strong> Cut into strips for serving.</li>
+                </ol>
+            
+                <h4>Assembling the Dish:</h4>
+                <ol>
+                    <li><strong>Plate the rice:</strong> Serve a portion of cooked rice on a plate.</li>
+                    <li><strong>Add the katsu:</strong> Place the sliced katsu cutlet on top of or next to the rice.</li>
+                    <li><strong>Pour the curry:</strong> Spoon the hot curry sauce over the katsu and rice.</li>
+                    <li><strong>Garnish:</strong> Sprinkle with chopped green onions and add a side of Fukujinzuke if desired.</li>
+                </ol>
+            
+                <p class="closing">
+                    Enjoy your homemade Japanese Katsu Curry—a perfect blend of crunch, spice, and rich umami flavors!
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <!-- Login/Signup Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Login</h2>
+            <form id="auth-form">
+                <input type="text" id="username" placeholder="Username (only for signup)" style="display:none;">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="toggle-auth">Don't have an account? <span>Sign Up</span></p>
+            <p id="auth-message"></p>
+        </div>
+    </div>
+
+    <script src="../Webpages/js/transition2.js"></script>
+    <script type="module" src="../Webpages/js/login-copy.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+
+</body>
+</html>

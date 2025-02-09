@@ -66,3 +66,10 @@ Changelog - 00:07 a.m. - 09/02/2025
 - Added in recipe page for Beef Wellington
 - Fixed discussion.js username issues
 - Updated several webpage link issues
+
+Changelog - 14:16 p.m. - 09/02/2025
+- Added in login-copy.js to fix login issues for recipe page
+- Updated style.css
+- Changed index.html game button to appropriate size
+- Added branding logos for game
+- Updated about.html
