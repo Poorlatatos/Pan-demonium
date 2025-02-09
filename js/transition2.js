@@ -7,14 +7,17 @@ document.addEventListener("DOMContentLoaded", function () {
         renderer: "svg",
         loop: false,
         autoplay: false,
-        path: "json/Animation - 1738652847228.json" // Replace with your actual Lottie file path
+        path: "/json/Animation - 1738652847228.json" // Ensure this is correct
     });
 
     function playTransition(url) {
         transition.style.opacity = "1";
+        transition.style.display = "block"; // Ensure visibility
         transition.style.pointerEvents = "all";
+
         animation.goToAndPlay(0, true);
 
+        // Ensure the transition redirects correctly
         animation.addEventListener("complete", () => {
             window.location.href = url;
         });
@@ -29,10 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Ensure transition fades out on load
     setTimeout(() => {
         transition.style.opacity = "0";
         setTimeout(() => {
             transition.style.pointerEvents = "none";
+            transition.style.display = "none"; // Hide completely after fading out
         }, 500);
     }, 500);
 });
