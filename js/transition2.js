@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         renderer: "svg",
         loop: false,
         autoplay: false,
-        path: "../json/Animation - 1738652847228.json" // Replace with your actual Lottie file path
+        path: "json/Animation - 1738652847228.json" // Replace with your actual Lottie file path
     });
 
     function playTransition(url) {
