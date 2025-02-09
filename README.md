@@ -1,7 +1,69 @@
 # Pan-demonium
 
-Introduction -
-Welcome to the README.md file for the Integrated Project of PAN-DEMONIUM
+PAN-DEMONIUM
+
+The overview of our project is that we have developed a website where people can come and cherish the recipes that we have carefully picked out for
+anyone to enjoy. That and also learn what ingredients are sutible for what dishes and come to discuss with anyone on our discussion board about
+their favourite recipes or share knowledge.
+
+Design Process
+
+For the design process, I thought about who would be willing to use our website and for that I can generalise a few player groups that
+would be keen. To explain this, I will be taking a reference from Gamification Concepts for this to hopefully better explain this.
+
+
+Free-Spirits: These players want to explore the system and use it for self expression, they enjoy using the system,
+not so much the premise of the system. Some people are just keen on trying anything for fun or even just to expand their
+general knowledge on a certain study/field.
+
+Socializers: These players are motivated by interaction. They enjoy engaging with peers, comparing progress on leaderboards,
+or sharing achievements. And so for them, we have a discussion board for them to socialize with others across the wide web.
+
+Self-Seekers: These players participate only when they see direct benefits, such as rewards, points, or incentives.
+Their motivation is extrinsic, and they are less likely to engage deeply with content unless they perceive a personal gain.
+
+Networkers: These players want to form social connections, but not because they like to,but to get some form of reward or status
+
+These are the types of people who might come to our website to not just learn but to also widen their perspectives in the culinary field.
+
+
+Features
+
+Web Based Game - It allows users to play our game and learn about certain ingredients for recipes in a different medium as opposed to just text.
+
+Recipe Page - This is the opposite of the Web Based Game, where people who enjoy reading can take upon this opportunity to learn new recipes.
+
+Discussion Board - Users can socialize from anypart of the world with one another to come share new ideas for recipes and learn from one another.
+
+Future Developments 
+
+Badge and Point System - We hope to develop a system like that in the future as since we have a profile feature a badge system would certainly entice people
+to edit and be more creative with their profiles.
+
+Technologies Used
+
+- Firebase Database / Firebase Authenthication - We used it mainly to help with not just the user signup, login and storage, but also to store
+and use the discussion of users in our website.
+
+- Lottie - We just used it for the transition of the animation from webpage to webpage
+
+
+Testing
+
+Do note that when booting up from VSC for the seperate recipe pages, they might look un-styled but
+this is solely because of GitHub having issues with page links so to cater to that I had to change the webpage links.
+
+So whatever you will see on VSC will look wrong and bad, but please do try to ignore that and just use the GitHub website itself for the actual
+testing.
+
+Credits
+
+I took inspiration from several old 1930s' menus found on the internet and used them as reference for the website's recipe pages.
+
+The game itself was semi-inspired from Mario 64 and the character that is in the game itself is based off Cooking Mama.
+
+
+Changelogs
 
 Changelog - 17:39 p.m. - 17/01/2025
 - Added in index.html file
@@ -77,3 +139,4 @@ Changelog - 14:16 p.m. - 09/02/2025
 Changelog - 17:08 p.m. - 09/02/2025
 - Added in several pictures of food
 - Updated all recipe pages with new images
+
